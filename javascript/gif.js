@@ -17,3 +17,24 @@ function displayGifs() {
     })
 
 }
+
+    // Function for showing Gifs
+
+    function clearGifs() {
+
+    $("#gifButtons").empty();
+
+    for (var i = 0; i < starterGifs.length; i++) {
+        // Dynamically create buttons
+        var g = $("<button>");
+        // Add gif class to button
+        g.addClass("gif");
+        // Add gif attribute
+        g.attr("gif-name", gif[i]);
+        // Add text to gif button
+        g.text(gif[i]);
+        // Add button to gifButtons div
+        $("#gifButtons").append(g);
+
+    }
+    }
