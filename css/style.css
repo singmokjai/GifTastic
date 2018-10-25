@@ -2,14 +2,15 @@ body {
 
 background-image: url("https://wallpapersultra.net/wp-content/uploads/Backgrounds-HD-Minions-Wallpaper.jpg");
 
-background-size: cover;
+background-size: 100%;
 
 }
+
 
 label {
 
     color: burlywood;
-    font-weight: bold;
+    font-weight: bolder;
     background-color: beige;
     font-size: large;
 
