@@ -1,5 +1,16 @@
 body {
 
-background-color: cornflowerblue;
+background-image: url("https://wallpapersultra.net/wp-content/uploads/Backgrounds-HD-Minions-Wallpaper.jpg");
+
+background-size: cover;
+
+}
+
+label {
+
+    color: burlywood;
+    font-weight: bold;
+    background-color: beige;
+    font-size: large;
 
 }

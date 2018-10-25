@@ -17,6 +17,7 @@ function displayGifs() {
         var results = response.data;
 
         for (var i = 0; i < results.length; i++) {
+        // Dynamically create and append corresponding results from array to variables
 
         var gifDiv = $("<div class = 'gifs'>");
 
@@ -31,14 +32,14 @@ function displayGifs() {
         gifDiv.append(gif);
 
         gifDiv.append(pRate);
-
+        
         $("#gifSection").append(gifDiv);
     }
     })
 
 }
 
-    // Function for showing Gifs
+    // Function for clearing buttons to prevent repeats
 
     function clearGifs() {
 
@@ -83,4 +84,12 @@ function displayGifs() {
     // Call clearGifs to display initial buttons
 
     clearGifs();
+
+    $(document).on("click", ".gif", ()=> {
+        
+        $("#gifSection").empty().displayGifs();
+
+    });
+
+
 
