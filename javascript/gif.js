@@ -15,6 +15,7 @@ function displayGifs() {
     }).then(function(response) {
     
         var results = response.data;
+        console.log(response)
 
         for (var i = 0; i < results.length; i++) {
         // Dynamically create and append corresponding results from array to variables
@@ -63,7 +64,7 @@ function displayGifs() {
     // Function for when add gif button is clicked
 
     $("#add-gif").on("click", function(event) {
-        // Grap input from textbox
+        // Grab input from textbox
         event.preventDefault();
 
         var gif = $("#gify").val().trim();
@@ -72,6 +73,25 @@ function displayGifs() {
 
         starterGifs.push(gif);
 
+        var state = $(this).attr("data-state");
+        
+        // Pausing / Animating Gifs
+
+        if (state === "still") {
+        
+            $(this).attr("src", $(this).attr ("data-animate"));
+            $(this).attr("data-state", "animate");
+    
+        }
+    
+        else {
+    
+            $(this).attr("src", $(this).attr ("data-still"));
+            $(this).attr("data-state", "still");
+        }
+
+        console.log(this)
+        
         // Call clearGifs to process array
 
         clearGifs();
@@ -89,7 +109,10 @@ function displayGifs() {
         
         $("#gifSection").empty().displayGifs();
     
-    })
+    });
+
+
+
 
     
 
